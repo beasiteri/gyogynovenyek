@@ -65,9 +65,9 @@
         "name_lat": "Echinacea purpurea",
         "name_hun": "Bíbor kasvirág",
         "type": "lágyszárú",
-        "image": [
+        "images": [
           "images/01-flower-01.jpg",
-          "images/02-flower-01.jpg"
+          "images/02-flower-01.jpg",
         ]
       }
     ]
@@ -96,7 +96,7 @@
       const row = document.createElement('tr');
 
       Object.keys(plant).forEach(key => {
-        if (key === 'image') {
+        if (key === 'images') {
           const imageCell = document.createElement('td');
 
           plant[key].forEach(imagePath => {
@@ -117,6 +117,9 @@
               const modalImg = document.getElementById('modalContent');
               modal.style.display = 'block';
               modalImg.src = img.src;
+              modalImg.onclick = () => {
+                modal.style.display = 'none';
+              }
             });
 
             imageCell.appendChild(img);
