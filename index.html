@@ -49,6 +49,13 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    @media screen and (min-width: 1080px) {
+      #main {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 
@@ -111,11 +118,13 @@
             img.style.border = '1px solid #ddd';
             img.style.padding = '4px';
             img.style.marginRight = '5px';
+            img.style.cursor = 'pointer';
 
             img.addEventListener('click', () => {
               const modal = document.getElementById('imageModal');
               const modalImg = document.getElementById('modalContent');
               modal.style.display = 'block';
+              modal.style.cursor = 'pointer';
               modalImg.src = img.src;
               modalImg.onclick = () => {
                 modal.style.display = 'none';
