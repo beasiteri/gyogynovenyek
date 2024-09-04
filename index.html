@@ -11,8 +11,7 @@
       width: 100%;
       min-width: 700px;
       scroll-behavior: auto;
-      display: flex;
-      justify-content: center;
+      padding: 0 5px;
     }
 
     #imageModal {
@@ -54,7 +53,14 @@
     }
 
     table td {
-      width: 30px;
+      width: 15%;
+    }
+
+    table td:first-child,
+    table th:first-child,
+    table td:nth-child(4),
+    table th:nth-child(4) {
+      width: 5%;
     }
 
     @media screen and (min-width: 1080px) {
@@ -869,7 +875,7 @@
     table.style.textAlign = 'left';
 
     const headerRow = document.createElement('tr');
-    const headers = ['', 'LAT', 'HUN', 'SZÁR', 'KÉP'];
+    const headers = ['', 'LAT', 'HUN', '|', 'KÉP'];
 
     headers.forEach(headerText => {
       const header = document.createElement('th');
@@ -893,11 +899,11 @@
             const img = document.createElement('img');
             img.src = imagePath;
             img.alt = plant.name_lat;
-            imageCell.style.width = '100px';
+            imageCell.style.width = '80%';
             imageCell.style.border = '1px solid #ddd';
             imageCell.style.padding = '4px';
             imageCell.style.marginRight = '5px';
-            img.style.width = '90%';
+            img.style.width = '60%';
             img.style.border = '1px solid #ddd';
             img.style.padding = '4px';
             img.style.marginRight = '5px';
